@@ -1,4 +1,4 @@
-import { getExpenses } from "@/src/services/expense";
+import { getExpenses } from "@/src/services/expenses";
 
 const expenses = await getExpenses();
 
