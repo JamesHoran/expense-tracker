@@ -36,3 +36,11 @@ pnpm dlx prisma migrate diff --from-empty --to-schema prisma/schema.prisma --scr
 ```
 
 ## [Roadmap](./docs/roadmap.md)
+
+## Shadcn/ui
+
+How to add more components
+
+```bash
+pnpm dlx shadcn@latest add button card input label table
+```
