@@ -7,9 +7,9 @@ datasource db {
   provider = "postgresql"
 }
 
-model Expense {
+model expenses {
   title     String
   amount    Decimal
   createdAt DateTime @default(now())
-  id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id        String   @id(map: "Expense_pkey") @default(dbgenerated("gen_random_uuid()")) @db.Uuid
 }
