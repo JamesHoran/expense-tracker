@@ -34,3 +34,5 @@ New-Item -ItemType Directory -Path $dir -Force | Out-Null
 pnpm dlx prisma migrate diff --from-empty --to-schema prisma/schema.prisma --script |
     Out-File -FilePath "$dir/migration.sql" -Encoding utf8
 ```
+
+## [Roadmap](./docs/roadmap.md)
