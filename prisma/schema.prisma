@@ -8,8 +8,17 @@ datasource db {
 }
 
 model expenses {
-  title     String
-  amount    Decimal
-  createdAt DateTime @default(now())
-  id        String   @id(map: "Expense_pkey") @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  id          String      @id(map: "Expense_pkey") @unique @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  amount      Decimal
+  category    categories? @relation(fields: [categoryId], references: [id])
+  categoryId  String?     @db.Uuid
+  date        DateTime?
+  description String?
+  createdAt   DateTime    @default(now())
+}
+
+model categories {
+  id       String     @unique @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name     String     @unique
+  expenses expenses[]
 }
